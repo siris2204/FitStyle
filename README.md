@@ -73,7 +73,7 @@ fashion_recommender/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/fitstyle.git
+git clone [https://github.com/your-username/fitstyle.git](https://github.com/siris2204/FitStyle.git)
 cd fitstyle
 ```
 
