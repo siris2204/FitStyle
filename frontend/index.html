@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Recommendation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👗 AI Fashion Recommender</h1>
+            <p class="subtitle">Get personalized outfit recommendations based on your body measurements</p>
+        </header>
+
+        <main>
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="upload">📷 Upload Photo</button>
+                <button class="tab-btn" data-tab="manual">📏 Manual Input</button>
+            </div>
+
+            <!-- Upload Photo Tab -->
+            <div id="upload-tab" class="tab-content active">
+                <div class="upload-section">
+                    <div class="upload-area" id="dropZone">
+                        <div class="upload-icon">📸</div>
+                        <p>Drag & drop your photo here</p>
+                        <p class="or-text">or</p>
+                        <label class="upload-btn">
+                            Choose File
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                        </label>
+                        <p class="hint">For best results, upload a clear full-body photo</p>
+                    </div>
+                    
+                    <div id="previewSection" class="preview-section hidden">
+                        <div class="preview-container">
+                            <div class="preview-box">
+                                <h3>Original Image</h3>
+                                <img id="previewImage" alt="Preview">
+                            </div>
+                            <div class="preview-box" id="annotatedBox">
+                                <h3>Detected Pose</h3>
+                                <img id="annotatedImage" alt="Annotated">
+                            </div>
+                        </div>
+                        <button id="analyzeBtn" class="primary-btn">🔍 Analyze & Get Recommendations</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manual Input Tab -->
+            <div id="manual-tab" class="tab-content">
+                <div class="manual-input-section">
+                    <h3>Enter Your Measurements</h3>
+                    <p class="hint">Enter pixel-based measurements from your photo</p>
+                    
+                    <div class="input-group">
+                        <label for="bustInput">
+                            <span class="label-icon">📐</span>
+                            Bust (shoulder width)
+                        </label>
+                        <input type="number" id="bustInput" placeholder="e.g., 150" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="waistInput">
+                            <span class="label-icon">📐</span>
+                            Waist
+                        </label>
+                        <input type="number" id="waistInput" placeholder="e.g., 120" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="hipInput">
+                            <span class="label-icon">📐</span>
+                            Hip
+                        </label>
+                        <input type="number" id="hipInput" placeholder="e.g., 140" step="0.1">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="numRecommendations">
+                            <span class="label-icon">🔢</span>
+                            Number of Recommendations
+                        </label>
+                        <input type="number" id="numRecommendations" value="5" min="1" max="20">
+                    </div>
+                    
+                    <button id="manualRecommendBtn" class="primary-btn">🎯 Get Recommendations</button>
+                </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loadingOverlay" class="loading-overlay hidden">
+                <div class="loading-spinner"></div>
+                <p>Analyzing your photo...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <h2>📊 Your Measurements</h2>
+                <div class="measurements-display">
+                    <div class="measurement-card">
+                        <span class="measurement-label">Bust</span>
+                        <span class="measurement-value" id="resultBust">-</span>
+                    </div>
+                    <div class="measurement-card">
+                        <span class="measurement-label">Waist</span>
+                        <span class="measurement-value" id="resultWaist">-</span>
+                    </div>
+                    <div class="measurement-card">
+                        <span class="measurement-label">Hip</span>
+                        <span class="measurement-value" id="resultHip">-</span>
+                    </div>
+                </div>
+
+                <h2>👗 Recommended Outfits</h2>
+                <div id="recommendationsGrid" class="recommendations-grid">
+                    <!-- Recommendations will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden">
+                <span class="error-icon">⚠️</span>
+                <p id="errorText"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by OpenPose & KNN Algorithm</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

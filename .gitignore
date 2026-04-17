@@ -1,0 +1,97 @@
+# =========================
+# 🐍 Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+
+# =========================
+# 📦 Dependencies / Logs
+# =========================
+pip-log.txt
+pip-delete-this-directory.txt
+*.log
+
+# =========================
+# 🔐 Environment Variables
+# =========================
+.env
+.env.*
+
+# =========================
+# 🧠 Model Files (Large)
+# =========================
+*.caffemodel
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# =========================
+# 📊 Data Files (Optional)
+# =========================
+data/fashion_images/
+uploads/
+*.csv
+
+# If you want to keep CSV, comment above line
+
+# =========================
+# 🖼️ Images (Optional)
+# =========================
+*.jpg
+*.jpeg
+*.png
+
+# =========================
+# 💻 VS Code
+# =========================
+.vscode/
+.history/
+
+# =========================
+# 🧪 Testing / Coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# 🧾 OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# 🌐 Frontend
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# 🧪 Temporary Files
+# =========================
+*.tmp
+*.temp
+*.swp
