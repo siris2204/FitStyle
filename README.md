@@ -239,9 +239,9 @@ Body: file=<image.jpg>
 
 ## 👩‍💻 Author
 
-**Pendyala Siri**
+**Siri Rao**
 - AI & Data Science Student
-
+- Interested in Fashion AI + Personalization Systems
 
 ---
 
